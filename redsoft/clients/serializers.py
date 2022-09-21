@@ -3,12 +3,13 @@ from .models import Client, Photo
 
 
 class PhotoSerializer(serializers.ModelSerializer):
-
+    """ Serializer for photo model """
     class Meta:
         model = Photo
         fields = '__all__'
 
 class ClientSerializer(serializers.ModelSerializer):
+    """ Serializer for Client model with OneToOne """
     photo = PhotoSerializer()
 
     class Meta:
