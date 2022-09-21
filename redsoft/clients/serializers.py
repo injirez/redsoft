@@ -1,4 +1,4 @@
-from rest_framework import  serializers
+from rest_framework import serializers
 from .models import Client, Photo
 from source.image_crop import crop
 

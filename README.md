@@ -18,3 +18,6 @@ http -f http://127.0.0.1:8000/api/v1/clients/manage/ Authorization:'Bearer {your
 
 # Update client
 http PUT http://127.0.0.1:8000/api/v1/clients/manage/{int:pk}/ Authorization:'Bearer {your_token_here}' name=Name2_new 
+
+# Get weather
+http -f http://127.0.0.1:8000/api/v1/weather/weather/ Authorization:'Bearer {your_token_here}' city=Москва date=01-01-2022
