@@ -18,10 +18,10 @@ class ClientViewSet(ViewSet):
         except Client.DoesNotExist:
             raise Http404
 
-    def post(self, request):
+    def post(self, request, *args, **kwargs):
         """
         Creates a new Client object.
-        Name, Surname, birth_date, gender, photo.
+        Name, Surname, birth_date, gender, photo and left, top, right, bottom pixels for crop.
         Returns object.
         """
         serializer = self.serializer_class(data=request.data)
