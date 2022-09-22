@@ -20,4 +20,11 @@ http -f http://127.0.0.1:8000/api/v1/clients/manage/ Authorization:'Bearer {your
 http PUT http://127.0.0.1:8000/api/v1/clients/manage/{int:pk}/ Authorization:'Bearer {your_token_here}' name=Name2_new 
 
 # Get weather
-http http://127.0.0.1:8000/api/v1/weather/<str:city>/<str:date(YYYY-MM-DD)> Authorization:'Bearer {your_token_here}'
+http GET http://127.0.0.1:8000/api/v1/weather/{str:city}/{str:date(YYYY-MM-DD)} Authorization:'Bearer {your_token_here}'
+
+# Run python daemon
+cd redsoft/source
+nohup python3 -u memory_usage.py
+
+# Get memory usage
+http GET http://127.0.0.1:8000/api/v1/monitor/memory/ Authorization:'Bearer {your_token_here}'

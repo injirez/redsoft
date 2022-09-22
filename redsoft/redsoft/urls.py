@@ -21,5 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/auth/', include('jwtauth.urls')),
     path('api/v1/clients/', include('clients.urls')),
-    path('api/v1/weather/', include('weather.urls'))
+    path('api/v1/weather/', include('weather.urls')),
+    path('api/v1/monitor/', include('monitor.urls')),
 ]
