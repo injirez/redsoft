@@ -1,30 +1,50 @@
 # Register
-http -f http://127.0.0.1:8000/api/v1/auth/register/ username=test password=test
+```bash
+$ http -f http://127.0.0.1:8000/api/v1/auth/register/ username=test password=test
+```
 
 # Get pair of tokens
-http -f http://127.0.0.1:8000/api/v1/auth/token/ username=test password=test
+```bash
+$ http -f http://127.0.0.1:8000/api/v1/auth/token/ username=test password=test
+```
 
 # Refresh token
-http -f http://127.0.0.1:8000/api/v1/auth/token/refresh/ username=test password=test
+```bash
+$ http -f http://127.0.0.1:8000/api/v1/auth/token/refresh/ username=test password=test
+```
 
 # Get list of clients
-http GET http://127.0.0.1:8000/api/v1/clients/manage/ Authorization:'Bearer {your_token_here}'
+```bash
+$ http GET http://127.0.0.1:8000/api/v1/clients/manage/ Authorization:'Bearer {your_token_here}'
+```
 
 # Delete client
-http DELETE http://127.0.0.1:8000/api/v1/clients/manage/{int:pk}/ Authorization:'Bearer {your_token_here}'
+```bash
+$ http DELETE http://127.0.0.1:8000/api/v1/clients/manage/{int:pk}/ Authorization:'Bearer {your_token_here}'
+```
 
 # Add client
-http -f http://127.0.0.1:8000/api/v1/clients/manage/ Authorization:'Bearer {your_token_here}' name=test1 surname=test1 birth_date=2003-03-03 gender=женский photo.file@/Users/rodionibragimov/Downloads/cheetos.jpeg left=100 top=100 right=400 bottom=400
+```bash
+$ http -f http://127.0.0.1:8000/api/v1/clients/manage/ Authorization:'Bearer {your_token_here}' name=test1 surname=test1 birth_date=2003-03-03 gender=женский photo.file@/Users/rodionibragimov/Downloads/cheetos.jpeg left=100 top=100 right=400 bottom=400
+```
 
 # Update client
-http PUT http://127.0.0.1:8000/api/v1/clients/manage/{int:pk}/ Authorization:'Bearer {your_token_here}' name=Name2_new 
+```bash
+$ http PUT http://127.0.0.1:8000/api/v1/clients/manage/{int:pk}/ Authorization:'Bearer {your_token_here}' name=Name2_new 
+```
 
 # Get weather
-http GET http://127.0.0.1:8000/api/v1/weather/{str:city}/{str:date(YYYY-MM-DD)} Authorization:'Bearer {your_token_here}'
+```bash
+$ http GET http://127.0.0.1:8000/api/v1/weather/{str:city}/{str:date(YYYY-MM-DD)} Authorization:'Bearer {your_token_here}'
+```
 
 # Run python daemon
-cd redsoft/source
-nohup python3 -u memory_usage.py
+```bash
+$ cd redsoft/source
+$ nohup python3 -u memory_usage.py
+```
 
 # Get memory usage
-http GET http://127.0.0.1:8000/api/v1/monitor/memory/ Authorization:'Bearer {your_token_here}'
+```bash
+$ http GET http://127.0.0.1:8000/api/v1/monitor/memory/ Authorization:'Bearer {your_token_here}'
+```
